@@ -1,4 +1,3 @@
- 
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,7 +23,6 @@ public class StringArrayUtilsTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void testGetFirstElement3() {
         String[] array = {"brown", "fox", "jumps", "over", "the", "lazy", "dog"};
@@ -32,13 +30,6 @@ public class StringArrayUtilsTest {
         String actual = StringArrayUtils.getFirstElement(array);
         Assert.assertEquals(expected, actual);
     }
-
-
-
-
-
-
-
 
 
 
@@ -62,7 +53,6 @@ public class StringArrayUtilsTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void testGetSecondElement3() {
         String[] array = {"brown", "fox", "jumps", "over", "the", "lazy", "dog"};
@@ -70,11 +60,6 @@ public class StringArrayUtilsTest {
         String actual = StringArrayUtils.getSecondElement(array);
         Assert.assertEquals(expected, actual);
     }
-
-
-
-
-
 
 
 
@@ -97,7 +82,6 @@ public class StringArrayUtilsTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void testGetLastElement3() {
         String[] array = {"the", "quick", "brown", "fox", "jumps", "over"};
@@ -105,16 +89,6 @@ public class StringArrayUtilsTest {
         String actual = StringArrayUtils.getLastElement(array);
         Assert.assertEquals(expected, actual);
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -142,7 +116,6 @@ public class StringArrayUtilsTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void testGetSecondToLastElement3() {
         String[] array = {"the", "quick", "brown", "fox", "jumps", "over"};
@@ -150,14 +123,6 @@ public class StringArrayUtilsTest {
         String actual = StringArrayUtils.getSecondToLastElement(array);
         Assert.assertEquals(expected, actual);
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -182,12 +147,6 @@ public class StringArrayUtilsTest {
 
 
 
-
-
-
-
-
-
     @Test
     public void testReverse1() {
         String[] array = {"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
@@ -195,7 +154,6 @@ public class StringArrayUtilsTest {
         String[] actual = StringArrayUtils.reverse(array);
         Assert.assertEquals(expected, actual);
     }
-
 
     @Test
     public void testReverse2() {
@@ -205,18 +163,12 @@ public class StringArrayUtilsTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void testReverse3() {
         String[] expected = {"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
         String[] actual = StringArrayUtils.reverse(StringArrayUtils.reverse(expected));
         Assert.assertEquals(expected, actual);
     }
-
-
-
-
-
 
 
 
@@ -230,7 +182,6 @@ public class StringArrayUtilsTest {
     }
 
 
-
     @Test
     public void testIsPalindromic2() {
         String[] array = {"Is this a palindrome?", "This is a palindrome", "Is this a palindrome?"};
@@ -238,17 +189,12 @@ public class StringArrayUtilsTest {
         Assert.assertTrue(outcome);
     }
 
-
     @Test
     public void testIsPalindromic3() {
         String[] array = {"Is this a plaindrome?", "This is not a plaindrome", "Is this a palindrome?", "This is not a palindrome"};
         boolean outcome = StringArrayUtils.isPalindromic(array);
         Assert.assertFalse(outcome);
     }
-
-
-
-
 
 
 
@@ -275,15 +221,12 @@ public class StringArrayUtilsTest {
         Assert.assertTrue(outcome);
     }
 
-
     @Test
     public void testIsPangramic4() {
         String[] array = {"a", "b", "c", "d"};
         boolean outcome = StringArrayUtils.isPangramic(array);
         Assert.assertFalse(outcome);
     }
-
-
 
 
 
