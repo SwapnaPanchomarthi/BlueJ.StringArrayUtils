@@ -1,4 +1,10 @@
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.*; 
+import java.util.Iterator;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -61,8 +67,8 @@ public class StringArrayUtils {
         int length = array.length;
         String[] reversedArray = new String[length];
         for (int currentIndex = length-1; currentIndex>=0; currentIndex--)
-        {   
-            reversedArray[currentIndex] = array[currentIndex];
+        {   int b = length-1;
+            reversedArray[b-currentIndex] = array[currentIndex];
         }
         System.out.println(Arrays.toString(reversedArray));
         return reversedArray;
@@ -73,7 +79,21 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
+        int length = array.length;
+        boolean b = false;
+        String[] reversedArray = new String[length];
+        for (int currentIndex = length-1; currentIndex>=0; currentIndex--)
+        {   int c = length-1;
+            reversedArray[c-currentIndex] = array[currentIndex];
+        }
+        
+       for(int j = 0; j<length; j++)
+       {if(reversedArray[j].equals(array[j]))
+        
+        b = true;
+        else
+        {b= false;}}
+        return b;
     }
 
     /**
@@ -81,7 +101,14 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        return false;
+        boolean b= false;  
+        
+        String str = Arrays.toString(array);
+        if(str.matches(".*[a-zA-Z]+.*"))
+        {b=true;}
+        else if (str.contains("[a-zA-Z]+"))
+        {b=true;}
+        return b;
     }
 
     /**
@@ -90,7 +117,17 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        int n = array.length;
+        int numberOfOccurences = 0;
+        for(int i=0; i<n;i++)
+ 
+            {
+           if(array[i].equalsIgnoreCase(value))
+           {numberOfOccurences =numberOfOccurences+1;
+            
+            }
+        }
+        return numberOfOccurences;
     }
 
     /**
@@ -99,7 +136,10 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+         List<String> list = new ArrayList<String>(Arrays.asList(array));
+         list.remove(valueToRemove);
+         array = list.toArray(new String[0]); 
+         return array;
     }
 
     /**
@@ -107,7 +147,18 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        return null;
+        List list = new ArrayList();
+         list = Arrays.asList(array);
+         List  newArray = new ArrayList();
+         newArray.add(list.get(0));
+        
+        for(int i=1;i<list.size();i++)
+        {if(list.get(i-1)!=list.get(i)){
+            newArray.add(list.get(i));
+        }
+    }
+        String[] str=(String[])newArray.toArray(new String[newArray.size()]);
+       return str;   
     }
 
     /**
@@ -115,7 +166,20 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-        return null;
+     
+        String str = array[0];
+        List<String> myList = new ArrayList<String>();
+        for(int i=1;i<array.length;i++)
+        {
+            if (array[i]==array[i-1]){
+            str = str+array[i];
+        }
+        else{
+        myList.add(str);
+        str=array[i];}
     }
-
+    myList.add(str);
+    String[] newArray = myList.toArray(new String[myList.size()]);
+    return newArray;
+}
 }
